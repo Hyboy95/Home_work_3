@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_5</title>
+</head>
+<body>
+<p id="arr"></p>
+<p id="result"></p>
+</body>
+</html>
+<script>
+  const arr_1 = [1,9,6,10,4];
+  const arr_2 = [9,2,0,3,1,5,8,10];
+  document.getElementById('arr').innerHTML = `Mảng 1:[${arr_1}] <br> Mảng 2: [${arr_2}]`;
+
+  function sum_array(arr1, arr2) {
+      let max_length = Math.max(arr1.length, arr2.length);
+      let sum_arr = [];
+      let  total = 0;
+      for (let i = 0; i < max_length; i++) {
+          let value1 = arr1[i] || 0;
+          let value2 = arr2[i] || 0;
+          total = value1 + value2;
+          sum_arr.push(total);
+      }
+      return sum_arr;
+  }
+
+  let result = sum_array(arr_1, arr_2);
+  document.getElementById('result').innerHTML = `Mảng mới: [${result}]`;
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_3</title>
+</head>
+<body>
+<p id="arr"></p>
+<p id="result"></p>
+</body>
+</html>
+<script>
+  const arr = [1,2,2,1,4,3,10,4,1,2,2,2];
+  document.getElementById('arr').innerHTML = `Mảng ban đầu:[${arr}]`;
+
+  // Chuyển về mảng chứa các phần từ không trùng lặp (mảng mới):
+  // C1:
+  // let new_arr = [];
+  // function arr_no_duplicates(prev, element) {
+  //     if (prev.indexOf(element) === -1) {
+  //         prev.push(element);
+  //     }
+  //     return prev;
+  // }
+  // arr.reduce(arr_no_duplicates, new_arr);
+
+  // C2:
+  let new_arr = arr.filter(function (value, index) {
+      let idx = arr.indexOf(value);
+      if (idx === index) {
+          return arr[idx];
+      }
+      })
+
+  //Đếm số lần xuất hiện  của các phần tử ở mảng mới trong mảng gốc:
+  for (let i = 0; i < new_arr.length; i++) {
+      let x = new_arr[i];
+      let count = 0;
+      for (let j = 0; j < arr.length; j++) {
+          if (x === arr[j]) {
+              count += 1;
+          }
+      }
+      document.getElementById('result').innerHTML += `Key: ${x}, Value: ${count} <br>`;
+  }
+</script>

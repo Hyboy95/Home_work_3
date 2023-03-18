@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_2</title>
+</head>
+<body>
+<p id="arr"></p>
+<p id="result"></p>
+</body>
+</html>
+<script>
+  const array = [0,1,5,8,13,-2,4,20];
+  document.getElementById("arr").innerHTML = `Mảng ban đầu: [${array}]`;
+
+  function second_highest(arr) {
+      arr.sort(function(a, b){return b - a}); // Sắp xếp mảng từ lớn đến nhỏ
+      return arr[1];
+  }
+
+  document.getElementById('result').innerHTML = `Số lớn thứ 2 trong mảng là: ${second_highest(array)}`;
+</script>

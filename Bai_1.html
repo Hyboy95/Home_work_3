@@ -10,13 +10,8 @@
 </body>
 </html>
 <script>
-
     const array = [1,'1',false,null,0,"",undefined,NaN,10,12];
     document.getElementById('arr').innerHTML = `Mảng ban đầu: [${array}]`;
-
-    // function filter_arr(arr) {
-    //     return arr.filter(Boolean);
-    // }
 
     function filter_arr(arr) {
         let check_true;
@@ -29,6 +24,11 @@
         }
         return true_arr;
     }
+
+    //C2:
+    // function filter_arr(arr) {
+    //     return arr.filter(Boolean);
+    // }
 
     document.getElementById('result').innerHTML = `Mảng sau khi lọc falsey: [${(filter_arr(array))}]`;
 </script>

@@ -10,11 +10,19 @@
 </body>
 </html>
 <script>
-  const arr = [1,2,2,1,4,3,10,4,1,2,2,2];
+  const arr = [1,2,18,1,4,3,10,4,1,18,2,2];
   document.getElementById('arr').innerHTML = `Mảng ban đầu:[${arr}]`;
 
   // Chuyển về mảng chứa các phần từ không trùng lặp (mảng mới):
   // C1:
+  let new_arr = [];
+  for (let k = 0; k < arr.length; k++) {
+      if (new_arr.indexOf(arr[k]) === -1) {
+          new_arr.push(arr[k]);
+      }
+  }
+
+  // C2:
   // let new_arr = [];
   // function arr_no_duplicates(prev, element) {
   //     if (prev.indexOf(element) === -1) {
@@ -24,17 +32,17 @@
   // }
   // arr.reduce(arr_no_duplicates, new_arr);
 
-  // C2:
-  let new_arr = arr.filter(function (value, index) {
-      let idx = arr.indexOf(value);
-      if (idx === index) {
-          return arr[idx];
-      }
-      })
+  // C3:
+  // let new_arr = arr.filter(function (value, index) {
+  //     let idx = arr.indexOf(value);
+  //     if (idx === index) {
+  //         return arr[idx];
+  //     }
+  //     })
 
   //Đếm số lần xuất hiện  của các phần tử ở mảng mới trong mảng gốc:
   for (let i = 0; i < new_arr.length; i++) {
-      let x = new_arr[i];
+       x = new_arr[i];
       let count = 0;
       for (let j = 0; j < arr.length; j++) {
           if (x === arr[j]) {

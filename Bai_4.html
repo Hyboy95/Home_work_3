@@ -15,20 +15,19 @@
 
   // Chuyển về mảng chứa các phần từ không trùng lặp (mảng mới):
   let new_arr = [];
-  function arr_no_duplicates(prev, element) {
-    if (prev.indexOf(element) === -1) {
-      prev.push(element);
-    }
-    return prev;
+  for (let k = 0; k < arr.length; k++) {
+      if (new_arr.indexOf(arr[k]) === -1) {
+          new_arr.push(arr[k]);
+      }
   }
-  arr.reduce(arr_no_duplicates, new_arr);
 
   //Đếm số lần xuất hiện  của các phần tử ở mảng mới trong mảng gốc:
   let different_count = 0;
   let only_value = '';
+  let count;
   for (let i = 0; i < new_arr.length; i++) {
-    let x = new_arr[i];
-    let count = 0;
+     x = new_arr[i];
+     count = 0;
     for (let j = 0; j < arr.length; j++) {
       if (x === arr[j]) {
         count += 1;
@@ -41,5 +40,4 @@
   }
   document.getElementById('result').innerHTML +=
       `Có ${different_count} phần tử trong mảng chỉ xuất hiện 1 lần <br> Bao gồm các phần tử: ${only_value}`;
-
 </script>
